@@ -1,0 +1,10 @@
+<form (ngSubmit)="convert()">
+    <input [(ngModel)]="fromCurrency" placeholder="Moeda de Origem" required>
+    <input [(ngModel)]="toCurrency" placeholder="Moeda de Destino" required>
+    <input type="number" [(ngModel)]="amount" placeholder="Valor" required>
+    <button type="submit">Converter</button>
+  </form>
+  
+  <p *ngIf="convertedValue !== null">Valor convertido: {{ convertedValue }} (Taxa: {{ conversionRate }})</p>
+  <p *ngIf="conversionRate === null && fromCurrency && toCurrency">Não foi possível obter a taxa de conversão.</p>
+  
